@@ -1,0 +1,14 @@
+use jaro6612projecttest;
+
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'Sennosides', 'Bulbul, african red-eyed', 'Germany', '53.42', 3, false, 5, '2018-03-21 23:38:31', '2018-05-15 19:29:42');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'Octinoxate and ', 'Verreaux''s sifaka', 'Netherlands', '3.08', 2, true, 5, '2017-11-28 03:44:48', '2018-07-31 21:52:05');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'Levocetirizine Dihydrochloride', 'Kite, black', 'Germany', '45.86', 4, true, 5, '2017-12-28 07:25:43', '2018-07-21 15:38:15');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'levonorgestrel/ethinyl estradiol l', 'White rhinoceros', 'Netherlands', '33.39', 1, true, 4, '2018-05-25 11:44:24', '2018-03-24 07:24:18');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'METHIMAZOLE', 'Black-crowned night heron', 'Germany', '28.57', 4, true, 3, '2018-03-07 01:22:28', '2018-09-07 12:10:57');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'OCTINOXATE', 'Cat, civet', 'Germany', '47.37', 1, true, 1, '2018-08-26 08:44:19', '2018-01-07 05:05:51');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'avobenzone, octocrylene', 'Vulture, bengal', 'Netherlands', '11.06', 3, true, 1, '2018-07-07 20:27:33', '2018-04-23 18:02:21');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'dextrose monohydrate', 'Pied cormorant', 'Germany', '54.63', 1, true, 5, '2018-07-14 06:07:36', '2018-02-07 20:22:37');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'Buspirone Hydrochloride', 'Kangaroo, black-faced', 'Germany', '40.85', 4, false, 2, '2017-12-01 00:52:25', '2018-03-15 21:01:10');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'PHENAZOPYRIDINE HYDROCHLORIDE', 'Australian sea lion', 'Netherlands', '8.00', 3, false, 5, '2018-10-27 21:29:55', '2018-02-11 13:16:39');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'OCTINOXATE and ', 'Bee-eater, white-fronted', 'Germany', '26.37', 5, false, 3, '2018-01-06 07:09:38', '2018-01-09 01:28:40');
+insert into Beer (id, name, type, country, price, size, active, vendor_id, created_at, updated_at) values (null, 'Air', 'Lesser flamingo', 'Netherlands', '14.11', 5, false, 4, '2018-07-16 05:07:28', '2018-05-05 00:56:52');
