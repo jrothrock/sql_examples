@@ -4,17 +4,19 @@ use jaro6612projecttest;
 # Marketing
 ##########
 
+
 # Which 5 customers have the oldest accounts?
-select u.first as 'First Name', u.last as 'Last Name', c.created_at as 'Account Creation Date'from Customer c
+ select u.first as 'First Name', u.last as 'Last Name', c.created_at as 'Account Creation Date'from Customer c
 	join user u on c.id = u.Customer_id
-    group by c.id 
+    group by c.id
     having c.created_at <=
         (select max(sq1.created_at) from
 			(select distinct c.created_at from Customer c
+				join user u on c.id = u.Customer_id
 				group by c.id
 				order by c.created_at asc 
                 limit 5) sq1)
-    order by c.created_at asc;
+    order by c.created_at asc;   
  
 # Which state has the most customers?
 select state, count(c.id) as 'Total Customers in State'from Customer c
@@ -25,18 +27,25 @@ select state, count(c.id) as 'Total Customers in State'from Customer c
 			order by count(state) desc
 			limit 1);
     
-# Which vendor has the highest sales?
-select v.name, sum(b.price * cod.quantity) as "Total Sales" from vendor v
-    join beer b on b.vendor_id = v.id
-    join customer_order_details cod on cod.beer_id = b.id
-    group by v.id
-    having sum(b.price * cod.quantity) >= 
-		(select sum(b.price * cod.quantity) from vendor v
-			join beer b on b.vendor_id = v.id
-			join customer_order_details cod on cod.beer_id = b.id
-			group by v.id
-			order by  sum(b.price * cod.quantity) desc
-            limit 1);
+# Which 5 customers have purchase the most beer (by amount not sales)
+select u.first, u.last, sum(cod.quantity) as "purchases count" from customer c
+	join user u on c.id = u.customer_id
+	join customer_order co on co.customer_id = c.id
+	join customer_order_details cod on cod.customer_order_id = c.id
+    group by c.id
+    having sum(cod.quantity) >=
+		(select min(sqq.quantPurchased) from 
+			(select sq.quantPurchased from
+				(select distinct sum(cod.quantity) as quantPurchased from customer c
+					join user u on c.id = u.customer_id
+					join customer_order co on co.customer_id = c.id
+					join customer_order_details cod on cod.customer_order_id = c.id
+					group by c.id
+					order by sum(cod.quantity) desc) sq
+				order by sq.quantPurchased desc
+				limit 5) sqq);
+            
+
  
  
  ##########
